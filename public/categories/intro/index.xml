@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Intro on A Hugo website</title>
+    <link>/categories/intro/</link>
+    <description>Recent content in Intro on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/intro/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introductory Post</title>
+      <link>/2018/06/17/introductory-post/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/06/17/introductory-post/</guid>
+      <description>After a bit of research and testing, I have decided to start using the blogdown package in R in order to continue blogging. With that change also comes the need to migrate my old blog from Google’s Blogger – that will be done over the summer and will probably a little bit of time since it’s not a straight forward process.
+I have updated the About page on this blog, as well as links that refer to my information.</description>
+    </item>
+    
+  </channel>
+</rss>

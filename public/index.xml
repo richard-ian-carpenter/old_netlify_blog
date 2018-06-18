@@ -6,10 +6,20 @@
     <description>Recent content on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jun 2018 22:32:51 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jun 2018 23:52:29 -0400</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Links</title>
+      <link>/links/</link>
+      <pubDate>Sun, 17 Jun 2018 23:52:29 -0400</pubDate>
+      
+      <guid>/links/</guid>
+      <description>This contains links to other blogs and resources that I have found useful.
+Blog Links Barter Is Evil   </description>
+    </item>
     
     <item>
       <title>About</title>
@@ -19,7 +29,17 @@
       <guid>/about/</guid>
       <description>Introduction My name is Rich Carpenter. I am an economist / data analyst with more than 9 years of experience, primarily with economic and financial data. I have a B.A. in Economics and Political Science and an M.S. in Applied Economics. For more information about my background and experience, please visit my LinkedIn Profile.
 Source and Theme Information This website was created using the blogdown package.
-The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.</description>
+The theme was forked from jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+    </item>
+    
+    <item>
+      <title>Introductory Post</title>
+      <link>/2018/06/17/introductory-post/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/06/17/introductory-post/</guid>
+      <description>After a bit of research and testing, I have decided to start using the blogdown package in R in order to continue blogging. With that change also comes the need to migrate my old blog from Google’s Blogger – that will be done over the summer and will probably a little bit of time since it’s not a straight forward process.
+I have updated the About page on this blog, as well as links that refer to my information.</description>
     </item>
     
   </channel>

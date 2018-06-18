@@ -1,0 +1,9 @@
+---
+title: "Links"
+date: "2018-06-17T23:52:29-04:00"
+---
+
+This contains links to other blogs and resources that I have found useful.
+
+### Blog Links
+1. [Barter Is Evil](https://www.barterisevil.com/)
