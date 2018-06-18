@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1529293254689.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2286398724",
+    "id" : "5FDB6664",
+    "lastKnownWriteTime" : 1529293307,
+    "last_content_update" : 1529293307832,
+    "path" : "~/R/blog_new/content/about.Rmd",
+    "project_path" : "content/about.Rmd",
+    "properties" : {
+        "cursorPosition" : "2,19",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
