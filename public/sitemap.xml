@@ -18,13 +18,13 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2018-06-17T23:52:29-04:00</lastmod>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/categories/intro/</loc>
+    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,8 +35,8 @@
   </url>
   
   <url>
-    <loc>/categories/intro/</loc>
-    <lastmod>2018-06-17T00:00:00+00:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2018-06-17T23:52:29-04:00</lastmod>
     <priority>0</priority>
   </url>
   
