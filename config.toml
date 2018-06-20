@@ -2,6 +2,9 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Just A Data Geek"
 theme = "blackburn"
+author = "Richard Ian Carpenter"
+copyright = "&copy; 2018. All rights reserved."
+canonifyurls = true
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
@@ -11,19 +14,21 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [[menu.main]]
     name = "About"
+    weight = 2
     url = "/about/"
 [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/richard-ian-carpenter"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/RICarpenter"
-[[menu.main]]
     name = "Links"
+    weight = 3
     url = "/links/"
 [[menu.main]]
     name = "Home"
+    weight = 1
     url = "https://www.justadatageek.com/"
+    
+[social]
+	twitter = "https://www.twitter.com/RICarpenter/"
+	github = "https://github.com/richard-ian-carpenter/"
+	linkedin = "www.linkedin.com/in/richard-ian-carpenter-755a1453/"
 
 [params]
     description = "Exploring and analyzing data because... data!"
@@ -37,8 +42,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
 
-    [params.logo]
-    url = "jadg_hex.png"
+[params.logo]
+    url = "/jadg_hex.png"
     width = 50
     height = 50
     alt = "justadatageek.com"
