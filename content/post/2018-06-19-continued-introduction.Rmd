@@ -1,0 +1,43 @@
+---
+title: Continued Introduction
+author: Richard Ian Carpenter
+date: '2018-06-19'
+slug: continued-introduction
+categories:
+  - intro
+tags:
+  - intro
+description: ''
+topics: []
+---
+
+This is a continuation to my first post just to see how things look using `blogdown`.
+
+So... first, I'll call one of the built in data sets:
+```{r, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(hexSticker)
+
+data(cars)
+summary(cars)
+```
+
+Now that the summary statistics are out of the way, here's a quick plot using the `ggplot2` package, part of the `tidyverse`:
+```{r, echo = FALSE}
+p1 <- ggplot(data = cars, aes(x = speed, y = dist)) +
+    geom_point() +
+    geom_smooth(method = 'lm', se = FALSE)
+
+p1
+```
+
+Finally, here's my site logo.  I created this using the `hexSticker` package:
+```{r, echo = FALSE}
+s1 <- sticker(p1, package = "jadg", p_size=18, s_x=1, s_y=1, s_width=1.2, s_height=1, p_x = 1, p_y = 1.7, h_color = "white", h_fill = "black", url = "www.justadatageek.com", u_size = 6, u_color = "white")
+
+s1
+```
+
+That's it for tonight.  As I get more comfortable with how this all works, I'll start blogging.  Plus, I'll be migrating my previous blog, which gives me some instant content.
+
+Stay tuned!
