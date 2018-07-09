@@ -1,6 +1,6 @@
 ---
 title: "Links"
-date: "2018-06-17T23:52:29-04:00"
+date: "2018-07-08"
 ---
 
 This contains links to other blogs and resources that I have found useful.
