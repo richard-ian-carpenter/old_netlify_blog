@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cryptocurrencies on Just A Data Geek</title>
+    <link>/categories/cryptocurrencies/</link>
+    <description>Recent content in Cryptocurrencies on Just A Data Geek</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018. All rights reserved.</copyright>
+    <lastBuildDate>Sun, 08 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/cryptocurrencies/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Thoughts On Bitcoin</title>
+      <link>/2018/07/08/my-thoughts-on-bitcoin/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/07/08/my-thoughts-on-bitcoin/</guid>
+      <description>I enjoy listening to/reading the stories on the various business news outlets about cryptocurrencies – I have been casually reading about blockchain technology and its different applications, but that is not the focus of this post.
+While I am not an “expert” on cryptocurrencies, I have come to the opinion that they are not really currencies. I see them as a commodity as opposed to a currency. Why?
+Like some other commodities, it is “mined”.</description>
+    </item>
+    
+  </channel>
+</rss>

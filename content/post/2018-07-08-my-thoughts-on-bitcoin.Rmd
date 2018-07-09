@@ -1,0 +1,76 @@
+---
+title: My Thoughts On Bitcoin
+author: Richard Ian Carpenter
+date: '2018-07-08'
+slug: my-thoughts-on-bitcoin
+categories:
+  - bitcoin
+  - cryptocurrencies
+  - commodities
+tags:
+  - bitcoin
+  - cryptocurrencies
+  - commodities
+description: ''
+topics: []
+---
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Setting up:
+library(lubridate)
+library(Quandl)
+library(blogdown)
+library(tidyverse)
+setwd("~/R/blog_new")
+
+# Reading in the data from Quandl:
+df_bitcoin_price <- Quandl("BCHAIN/MKPRU")
+df_bitcoin_quantity <- Quandl("BCHAIN/TOTBC")
+
+# Combining the two dataframes:
+df_main <- merge(df_bitcoin_price, df_bitcoin_quantity, by = "Date")
+colnames(df_main) <- c("date", "price", "quantity")
+```
+
+I enjoy listening to/reading the stories on the various business news outlets about cryptocurrencies -- I have been casually reading about blockchain technology and its different applications, but that is not the focus of this post.
+
+While I am not an "expert" on cryptocurrencies, I have come to the opinion that they are not really currencies.  I see them as a commodity as opposed to a currency.  Why?
+
+1. Like some other commodities, it is "mined".  Granted, it is done with a computer but it takes labor and capital to pull cryptocoins into existence.
+
+2. Unlike currencies, cryptocoins are not (widely) used as:
+    a. a medium of exchange.  You can not trade your cryptocoins for goods or services in the marketplace-at-large.  There are some vendors who do except them, but they are few.
+    b. a measure of value.  Just as cryptocoins are not used in exchange for good and services, they are also not used as a standard measure of value of goods or services.
+    
+It could be argued that they do represent a store of value, since you can exchange money for cryptocoins and then store those cryptocoins in an electronic wallet.  But you won't withdraw them from the wallet to make purchases.  Instead, it is similar to exchanging currency for a commodity such as gold or silver, and using that as a store of value.  Just like those commodities, a cryptocoin's value is subject to the forces of the market and its price can experience periods of volatility.
+
+Looking at the historical chart of Bitcoin's price, it's easy see that volatility:
+
+```{r, echo = FALSE}
+summary(df_main$price)
+```
+
+```{r, echo = FALSE}
+ggplot(data = df_main, aes(x = date, y = price)) + 
+    geom_line() + 
+    ggtitle("Bitcoin Prices, in US Dollars, from 2009 to Present")
+```
+
+From the graph above, it looks like the volatility in Bitcoin's price started in 2017 and has continued through the present.  To illustrate the volatility, I created the chart below of the change in price:
+
+```{r, echo = FALSE}
+summary(df_main$price_diff)
+```
+
+```{r, echo = FALSE}
+df_main$price_diff <- c(0, diff(df_main$price, 
+                                differences = 1))
+ggplot(data = df_main, aes(x = date, y = price_diff)) +
+    geom_line()
+```
+
+I'm going to leave off here for the time being.  I have some ideas for continuing on this topic, including looking at mined Bitcoins, hashrates, etc.
+
+All data comes from [the Blockchain data set available on Quandl](https://www.quandl.com/data/BCHAIN-Blockchain).
+
+Side note: I noticed that the timestamp on my posts is 00:00.  It looks like a quirk in `Blogdown`.  If I use the "New Post" option in the "Addins" drop down menu there is no timestamp, just 00:00.  If I use the actual command `new_post()` in `RStudio`'s console, the actual time appears.

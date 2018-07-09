@@ -7,3 +7,8 @@ This contains links to other blogs and resources that I have found useful.
 
 ### Blog Links
 1. [Barter Is Evil](http://www.barterisevil.com/)
+2. [Econbrowser: Analysis of current economic conditions and policy](http://econbrowser.com/)
+3. [Econometrics Beat: David Giles' Blog](http://davegiles.blogspot.com/)
+4. [Hyndsight: A blog by Robert J Hyndman]()http://robjhyndman.com/hyndsight/
+5. [R-blogger](http://www.r-bloggers.com/)
+6. [Simply Statistics](http://simplystatistics.org/)

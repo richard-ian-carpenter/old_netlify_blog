@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.31.1" />
 
-  <title>Continued Introduction &middot; Just A Data Geek</title>
+  <title>My Thoughts On Bitcoin &middot; Just A Data Geek</title>
 
   
   
@@ -197,7 +197,7 @@
 
 
 <div class="header">
-  <h1>Continued Introduction</h1>
+  <h1>My Thoughts On Bitcoin</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -206,7 +206,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jun 2018, 00:00</time>
+    <time>08 Jul 2018, 00:00</time>
   </div>
 
   
@@ -222,7 +222,11 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="/tags/intro">intro</a>
+      <a class="post-taxonomy-tag" href="/tags/bitcoin">bitcoin</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/cryptocurrencies">cryptocurrencies</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/commodities">commodities</a>
     
   </div>
   
@@ -230,39 +234,41 @@
 
 </div>
 
-  <p>This is a continuation to my first post just to see how things look using <code>blogdown</code>.</p>
-<p>So… first, I’ll call one of the built in data sets:</p>
-<pre class="r"><code>library(tidyverse)
-library(hexSticker)
-
-data(cars)
-summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<p>Now that the summary statistics are out of the way, here’s a quick plot using the <code>ggplot2</code> package, part of the <code>tidyverse</code>:</p>
-<p><img src="/post/2018-06-19-continued-introduction_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Finally, here’s my site logo. I created this using the <code>hexSticker</code> package:</p>
-<p><img src="/post/2018-06-19-continued-introduction_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>That’s it for tonight. As I get more comfortable with how this all works, I’ll start blogging. Plus, I’ll be migrating my previous blog, which gives me some instant content.</p>
-<p>Stay tuned!</p>
+  <p>I enjoy listening to/reading the stories on the various business news outlets about cryptocurrencies – I have been casually reading about blockchain technology and its different applications, but that is not the focus of this post.</p>
+<p>While I am not an “expert” on cryptocurrencies, I have come to the opinion that they are not really currencies. I see them as a commodity as opposed to a currency. Why?</p>
+<ol style="list-style-type: decimal">
+<li><p>Like some other commodities, it is “mined”. Granted, it is done with a computer but it takes labor and capital to pull cryptocoins into existence.</p></li>
+<li>Unlike currencies, cryptocoins are not (widely) used as:
+<ol style="list-style-type: lower-alpha">
+<li>a medium of exchange. You can not trade your cryptocoins for goods or services in the marketplace-at-large. There are some vendors who do except them, but they are few.</li>
+<li>a measure of value. Just as cryptocoins are not used in exchange for good and services, they are also not used as a standard measure of value of goods or services.</li>
+</ol></li>
+</ol>
+<p>It could be argued that they do represent a store of value, since you can exchange money for cryptocoins and then store those cryptocoins in an electronic wallet. But you won’t withdraw them from the wallet to make purchases. Instead, it is similar to exchanging currency for a commodity such as gold or silver, and using that as a store of value. Just like those commodities, a cryptocoin’s value is subject to the forces of the market and its price can experience periods of volatility.</p>
+<p>Looking at the historical chart of Bitcoin’s price, it’s easy see that volatility:</p>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+##     0.000     2.981   139.109  1075.003   602.590 19498.683</code></pre>
+<p><img src="/post/2018-07-08-my-thoughts-on-bitcoin_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>From the graph above, it looks like the volatility in Bitcoin’s price started in 2017 and has continued through the present. To illustrate the volatility, I created the chart below of the change in price:</p>
+<pre><code>## Length  Class   Mode 
+##      0   NULL   NULL</code></pre>
+<p><img src="/post/2018-07-08-my-thoughts-on-bitcoin_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>I’m going to leave off here for the time being. I have some ideas for continuing on this topic, including looking at mined Bitcoins, hashrates, etc.</p>
+<p>All data comes from <a href="https://www.quandl.com/data/BCHAIN-Blockchain">the Blockchain data set available on Quandl</a>.</p>
+<p>Side note: I noticed that the timestamp on my posts is 00:00. It looks like a quirk in <code>Blogdown</code>. If I use the “New Post” option in the “Addins” drop down menu there is no timestamp, just 00:00. If I use the actual command <code>new_post()</code> in <code>RStudio</code>’s console, the actual time appears.</p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2018/06/17/introductory-post/"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2018/06/19/continued-introduction/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2018/06/17/introductory-post/">Introductory Post</a>
+      <a href="/2018/06/19/continued-introduction/">Continued Introduction</a>
     </nav>
     
   </div>
@@ -271,14 +277,8 @@ summary(cars)</code></pre>
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="/2018/07/08/my-thoughts-on-bitcoin/">My Thoughts On Bitcoin</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2018/07/08/my-thoughts-on-bitcoin/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
