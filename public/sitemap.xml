@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/links/</loc>
+    <lastmod>2018-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/07/08/my-thoughts-on-bitcoin/</loc>
     <lastmod>2018-07-08T00:00:00+00:00</lastmod>
   </url>
@@ -10,11 +15,6 @@
   <url>
     <loc>/2018/06/19/continued-introduction/</loc>
     <lastmod>2018-06-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/links/</loc>
-    <lastmod>2018-06-17T23:52:29-04:00</lastmod>
   </url>
   
   <url>

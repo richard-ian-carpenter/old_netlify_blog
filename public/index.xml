@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Links</title>
+      <link>/links/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/links/</guid>
+      <description>This contains links to other blogs and resources that I have found useful.
+Blog Links Barter Is Evil Econbrowser: Analysis of current economic conditions and policy Econometrics Beat: David Giles’ Blog Hyndsight: A blog by Robert J Hyndmanhttp://robjhyndman.com/hyndsight/ R-blogger Simply Statistics   </description>
+    </item>
+    
+    <item>
       <title>My Thoughts On Bitcoin</title>
       <link>/2018/07/08/my-thoughts-on-bitcoin/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
@@ -32,16 +42,6 @@ Like some other commodities, it is “mined”.</description>
       <description>This is a continuation to my first post just to see how things look using blogdown.
 So… first, I’ll call one of the built in data sets:
 library(tidyverse) library(hexSticker) data(cars) summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00 Now that the summary statistics are out of the way, here’s a quick plot using the ggplot2 package, part of the tidyverse:</description>
-    </item>
-    
-    <item>
-      <title>Links</title>
-      <link>/links/</link>
-      <pubDate>Sun, 17 Jun 2018 23:52:29 -0400</pubDate>
-      
-      <guid>/links/</guid>
-      <description>This contains links to other blogs and resources that I have found useful.
-Blog Links Barter Is Evil   </description>
     </item>
     
     <item>
