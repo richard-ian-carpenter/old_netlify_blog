@@ -59,12 +59,12 @@ ggplot(data = df_main, aes(x = date, y = price)) +
 From the graph above, it looks like the volatility in Bitcoin's price started in 2017 and has continued through the present.  To illustrate the volatility, I created the chart below of the change in price:
 
 ```{r, echo = FALSE}
+df_main$price_diff <- c(0, diff(df_main$price, 
+                                differences = 1))
 summary(df_main$price_diff)
 ```
 
 ```{r, echo = FALSE}
-df_main$price_diff <- c(0, diff(df_main$price, 
-                                differences = 1))
 ggplot(data = df_main, aes(x = date, y = price_diff)) +
     geom_line()
 ```
