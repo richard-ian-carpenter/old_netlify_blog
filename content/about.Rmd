@@ -4,7 +4,11 @@ date: "2018-06-17T22:32:51-04:00"
 ---
     
 ### Introduction
-My name is Rich Carpenter.  I am an economist / data analyst with more than 9 years of experience, primarily with economic and financial data.  I have a B.A. in Economics and Political Science and an M.S. in Applied Economics.  For more information about my background and experience, please visit my [LinkedIn Profile](www.linkedin.com/in/richard-ian-carpenter-755a1453).
+My name is Rich Carpenter.  I am an economist / data analyst with more than 9 years of experience, primarily with economic and financial data.  I have a B.A. in Economics and Political Science and an M.S. in Applied Economics.  
+
+For more information about my background and experience, please visit my [LinkedIn Profile](www.linkedin.com/in/richard-ian-carpenter-755a1453).
+
+You can also read older posts from my [blog](https://justadatageek.blogspot.com) when I used Blogger.
 
 
 #### Source and Theme Information

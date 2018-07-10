@@ -3,7 +3,7 @@ title: "Links"
 date: "2018-07-08"
 ---
 
-This contains links to other blogs and resources that I have found useful.
+This contains page contains links to other blogs and resources on the internet that I have found useful.
 
 ### Blog Links
 1. [Barter Is Evil](http://www.barterisevil.com/)

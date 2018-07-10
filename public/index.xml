@@ -18,8 +18,8 @@
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/links/</guid>
-      <description>This contains links to other blogs and resources that I have found useful.
-Blog Links Barter Is Evil Econbrowser: Analysis of current economic conditions and policy Econometrics Beat: David Giles’ Blog Hyndsight: A blog by Robert J Hyndmanhttp://robjhyndman.com/hyndsight/ R-blogger Simply Statistics   </description>
+      <description>This contains page contains links to other blogs and resources on the internet that I have found useful.
+Blog Links Barter Is Evil Econbrowser: Analysis of current economic conditions and policy Econometrics Beat: David Giles’ Blog Hyndsight: A blog by Robert J Hyndman R-blogger Simply Statistics   </description>
     </item>
     
     <item>
@@ -50,9 +50,10 @@ library(tidyverse) library(hexSticker) data(cars) summary(cars) ## speed dist ##
       <pubDate>Sun, 17 Jun 2018 22:32:51 -0400</pubDate>
       
       <guid>/about/</guid>
-      <description>Introduction My name is Rich Carpenter. I am an economist / data analyst with more than 9 years of experience, primarily with economic and financial data. I have a B.A. in Economics and Political Science and an M.S. in Applied Economics. For more information about my background and experience, please visit my LinkedIn Profile.
-Source and Theme Information This website was created using the blogdown package.
-  </description>
+      <description>Introduction My name is Rich Carpenter. I am an economist / data analyst with more than 9 years of experience, primarily with economic and financial data. I have a B.A. in Economics and Political Science and an M.S. in Applied Economics.
+For more information about my background and experience, please visit my LinkedIn Profile.
+You can also read older posts from my blog when I used Blogger.
+Source and Theme Information This website was created using the blogdown package.</description>
     </item>
     
     <item>
