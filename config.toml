@@ -1,4 +1,4 @@
-baseurl = "https://www.justadatageek.com/"
+baseurl = "https://www.justadatageek.com"
 languageCode = "en-us"
 title = "Just A Data Geek"
 theme = "blackburn"
@@ -23,7 +23,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
     name = "Home"
     weight = 1
-    url = "https://www.justadatageek.com/"
+    url = "/"
 [[menu.main]]
     name = "Comment Policy"
     weight = 4
