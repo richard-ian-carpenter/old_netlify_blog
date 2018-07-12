@@ -66,5 +66,17 @@ Source and Theme Information This website was created using the blogdown package
 I have updated the About page on this blog, as well as links that refer to my information.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/comment_policy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/comment_policy/</guid>
+      <description>Comment Policy The following rules are a slightly modified version of what is suggested by Disqus.
+Please, try your damnedest to abide by them. Be polite, be professional. Thank you!
+The Rules:
+Keep it civil (aka “Don’t be a jerk!”)&amp;quot; We’re going to get into the thick of a lot of heated discussions and that’s okay. These discussions often entail topics that we all personally care a lot about and will passionately defend.</description>
+    </item>
+    
   </channel>
 </rss>
