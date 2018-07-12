@@ -5,7 +5,6 @@ theme = "blackburn"
 author = "Richard Ian Carpenter"
 copyright = "&copy; 2018. All rights reserved."
 canonifyurls = true
-paginate = 10
 googleAnalytics = ""
 disqusShortname = "justadatageek"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
