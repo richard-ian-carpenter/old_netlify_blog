@@ -23,7 +23,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
     name = "Home"
     weight = 1
-    url = "/"
+    url = "https://www.justadatageek.com/"
 [[menu.main]]
     name = "Comment Policy"
     weight = 4
