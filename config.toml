@@ -6,7 +6,7 @@ author = "Richard Ian Carpenter"
 copyright = "&copy; 2018. All rights reserved."
 canonifyurls = true
 googleAnalytics = ""
-disqusShortname = "justadatageek.disqus.com"
+disqusShortname = "justadatageek"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
