@@ -23,7 +23,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [[menu.main]]
     name = "Home"
     weight = 1
-    url = "https://www.justadatageek.com/"
+    url = "/"
 [[menu.main]]
     name = "Comment Policy"
     weight = 4
@@ -47,7 +47,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxVersion = "2.7.1"
 
 [params.logo]
-    url = "/jadg_hex.png"
+    url = "/static/img/jadg.png"
     width = 50
     height = 50
     alt = "justadatageek.com"
