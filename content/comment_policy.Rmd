@@ -11,12 +11,12 @@ We’re going to get into the thick of a lot of heated discussions and that’s 
  
 So, remember to avoid:
 
-    * name-calling
-    * ad hominem attacks
-    * responding to a post’s tone instead of its actual content.
-    * knee-jerk contradiction
-    * comments that we find to be hateful, inflammatory, or harassing may be removed. If you don’t have something nice to say about another user, don't say it. 
-    * treat others the way you’d like to be treated.
+    - name-calling
+    - ad hominem attacks
+    - responding to a post’s tone instead of its actual content.
+    - knee-jerk contradiction
+    - comments that we find to be hateful, inflammatory, or harassing may be removed. If you don’t have something nice to say about another user, don't say it. 
+    - treat others the way you’d like to be treated.
 
 Always strive to add value to every interaction and discussion in which you participate.
 
@@ -25,8 +25,8 @@ If you are not sure your post adds to the conversation, think over what you want
 ### Keep it tidy
 Help make my life easier by taking a moment to ensure that what you’re about to post is in the right place. That means:
 
-    * don’t post off-topic comments or discussions
-    * don’t cross-post the same thing multiple times
+    - don’t post off-topic comments or discussions
+    - don’t cross-post the same thing multiple times
 
 If you see something, say something: moderating comments can be difficult, but it's something we can do together.  So, if you see an issue, contact me if possible or flag any comments for review. If you believe someone has violated this site's Comment Policy, report it to Disqus by flagging the user's profile.
 
