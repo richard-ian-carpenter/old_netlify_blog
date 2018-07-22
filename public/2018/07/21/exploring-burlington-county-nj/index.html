@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.44" />
 
-  <title>Continued Introduction &middot; Just A Data Geek</title>
+  <title>Exploring Burlington County, NJ &middot; Just A Data Geek</title>
 
   
   
@@ -203,7 +203,7 @@
 
 
 <div class="header">
-  <h1>Continued Introduction</h1>
+  <h1>Exploring Burlington County, NJ</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -212,7 +212,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jun 2018, 00:00</time>
+    <time>21 Jul 2018, 00:00</time>
   </div>
 
   
@@ -228,7 +228,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="/tags/intro">intro</a>
+      <a class="post-taxonomy-tag" href="/tags/employment">employment</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="/tags/economy">economy</a>
     
   </div>
   
@@ -236,39 +238,47 @@
 
 </div>
 
-  <p>This is a continuation to my first post just to see how things look using <code>blogdown</code>.</p>
-<p>So… first, I’ll call one of the built in data sets:</p>
-<pre class="r"><code>library(tidyverse)
-library(hexSticker)
-
-data(cars)
-summary(cars)</code></pre>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-<p>Now that the summary statistics are out of the way, here’s a quick plot using the <code>ggplot2</code> package, part of the <code>tidyverse</code>:</p>
-<p><img src="/post/2018-06-19-continued-introduction_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>Finally, here’s my site logo. I created this using the <code>hexSticker</code> package:</p>
-<p><img src="/post/2018-06-19-continued-introduction_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>That’s it for tonight. As I get more comfortable with how this all works, I’ll start blogging. Plus, I’ll be migrating my previous blog, which gives me some instant content.</p>
-<p>Stay tuned!</p>
+  <div id="beginning-an-exploration-of-burlington-county-nj" class="section level3">
+<h3>Beginning An Exploration of Burlington County, NJ</h3>
+<p>Early last year, my family and I moved back to the Philadelphia area. We settled in Burlington County, New Jersey. Details on the county and a bit about its history can be found on <a href="https://en.wikipedia.org/wiki/Burlington_County,_New_Jersey">via Wikipedia</a>.</p>
+<p>I wanted to start this exploration with looking at county employment. I downloaded these data from the <a href="https://www.bls.gov/cew/">BLS QCEW</a> website, which covers 2007 through 2017. Employment figures for the county for 2018 are not yet available.</p>
+</div>
+<div id="looking-at-summary-statistics" class="section level3">
+<h3>Looking at Summary Statistics</h3>
+<p>The first thing I’d like to look at is the annual employment numbers, with a focus on private, non-farm employment – which removes Federal, state, and local government employees, as well as non-covered employees such as railroad employees and those employed by religious organizations:</p>
+<pre><code>##    Year avg. empl. st. dev. empl. min. empl. max. empl.
+## 1  2007   202597.2       3407.727     195803     207705
+## 2  2008   199752.2       3871.757     192305     205042
+## 3  2009   194917.4       3651.954     187003     200154
+## 4  2010   191135.5       3937.543     183370     197031
+## 5  2011   190234.0       3373.338     184049     194933
+## 6  2012   192778.8       3837.607     187563     197950
+## 7  2013   195632.8       3280.522     189874     201257
+## 8  2014   196572.8       3747.050     190440     201458
+## 9  2015   196621.7       4160.501     191159     201704
+## 10 2016   200808.8       4398.542     195187     207651
+## 11 2017   204541.6       3864.954     199868     209953</code></pre>
+<p><img src="/post/2018-07-21-exploring-burlington-county-nj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Note: More information on who is included in those statistics can be found <a href="https://www.bls.gov/cew/cewbultncur.htm#Employment">here</a>.</p>
+<p>From the data, it would appear that Burlington County has rebounded from the lows of the 2008-09 Financial Crisis. The blue dots are monthly employment, and show some (expected) variation, the black line shows the seasonality that occurs each year, and the solid blue line shows the trend in the data.</p>
+<p>This plot of autocorrelation more clearly shows the trend (demonstrated by the “decaying wave” pattern) and the seasonality, which occurs on a 6-month bases, in the data:</p>
+<p><img src="/post/2018-07-21-exploring-burlington-county-nj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>I’m going to leave off here for the moment while I collect and sort through additional data. I plan to look at the major sectors in private employment (by NAICS) and see how they affect private employment. I also plan on looking at wages in a similar fashion.</p>
+<p>Until next post…</p>
+</div>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2018/06/17/introductory-post/"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2018/07/08/my-thoughts-on-bitcoin/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2018/06/17/introductory-post/">Introductory Post</a>
+      <a href="/2018/07/08/my-thoughts-on-bitcoin/">My Thoughts On Bitcoin</a>
     </nav>
     
   </div>
@@ -277,14 +287,8 @@ summary(cars)</code></pre>
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="/2018/07/08/my-thoughts-on-bitcoin/">My Thoughts On Bitcoin</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2018/07/08/my-thoughts-on-bitcoin/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

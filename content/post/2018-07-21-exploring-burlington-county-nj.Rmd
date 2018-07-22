@@ -1,0 +1,83 @@
+---
+title: Exploring Burlington County, NJ
+author: Richard Ian Carpenter
+date: '2018-07-21'
+slug: exploring-burlington-county-nj
+categories:
+  - employment
+  - economy
+tags:
+  - employment
+  - economy
+description: ''
+topics: []
+---
+
+### Beginning An Exploration of Burlington County, NJ
+
+Early last year, my family and I moved back to the Philadelphia area.  We settled in Burlington County, New Jersey.  Details on the county and a bit about its history can be found on [via Wikipedia](https://en.wikipedia.org/wiki/Burlington_County,_New_Jersey).
+
+I wanted to start this exploration with looking at county employment.  I downloaded these data from the [BLS QCEW](https://www.bls.gov/cew/) website, which covers 2007 through 2017.  Employment figures for the county for 2018 are not yet available. 
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Loading packages:
+library(lubridate); library(blogdown); library(knitr); library(openxlsx)
+library(forecast); library(tseries); library(tidyverse)
+
+# Reading in data:
+burlco_total_empl <- read.xlsx("~/R/burlco_nj_total_employment.xlsx", startRow = 14)
+burlco_private_empl <-read.xlsx("~/R/burlco_nj_private_employment.xlsx", startRow = 14)
+
+# Cleaning out the rows with the annual average, Period = "M13":
+burlco_private_empl <- burlco_private_empl[burlco_private_empl$Period != "M13", ]
+burlco_total_empl <- burlco_total_empl[burlco_total_empl$Period != "M13", ]
+
+# Creating a date variables:
+burlco_private_empl$month <- substr(burlco_private_empl$Period,2,3)
+burlco_total_empl$month <- substr(burlco_total_empl$Period,2,3)
+burlco_private_empl$date <- paste0(burlco_private_empl$Year,"-",
+burlco_private_empl$month,"-01")
+burlco_total_empl$date <- paste0(burlco_total_empl$Year,"-",
+burlco_total_empl$month,"-01")
+burlco_private_empl$date <- ymd(burlco_private_empl$date)
+burlco_total_empl$date <- ymd(burlco_total_empl$date)
+```
+
+### Looking at Summary Statistics
+
+The first thing I'd like to look at is the annual employment numbers, with a focus on private, non-farm employment -- which removes Federal, state, and local government employees, as well as non-covered employees such as railroad employees and those employed by religious organizations:
+
+```{r, echo = FALSE}
+table1 <- burlco_private_empl %>% 
+    group_by(Year) %>% 
+    summarise("avg. empl." = mean(Value),
+              "st. dev. empl." = sd(Value),
+              "min. empl." = min(Value),
+              "max. empl." = max(Value))
+
+as.data.frame(table1)
+```
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+ggplot(data = burlco_private_empl, aes(x = date, y = Value)) +
+    geom_line() +
+    geom_point(colour = "blue", alpha = 0.5) +
+    geom_smooth(se = FALSE) +
+    labs(title = "Burlington County, NJ Private Sector Employment",
+         subtitle = "Jan 2007 to Dec 2017",
+         caption = "Source: BLS QCEW Data, pulled 21 July 2018")
+```
+
+Note: More information on who is included in those statistics can be found [here](https://www.bls.gov/cew/cewbultncur.htm#Employment).
+
+From the data, it would appear that Burlington County has rebounded from the lows of the 2008-09 Financial Crisis.  The blue dots are monthly employment, and show some (expected) variation, the black line shows the seasonality that occurs each year, and the solid blue line shows the trend in the data.
+
+This plot of autocorrelation more clearly shows the trend (demonstrated by the "decaying wave" pattern) and the seasonality, which occurs on a 6-month bases, in the data:
+
+```{r, echo = FALSE}
+acf(burlco_private_empl$Value)
+```
+
+I'm going to leave off here for the moment while I collect and sort through additional data.  I plan to look at the major sectors in private employment (by NAICS) and see how they affect private employment.  I also plan on looking at wages in a similar fashion.
+
+Until next post...
