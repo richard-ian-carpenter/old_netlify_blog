@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 21 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring Burlington County, NJ, Part Two</title>
+      <link>/2018/08/01/exploring-burlington-county-nj-part-two/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/01/exploring-burlington-county-nj-part-two/</guid>
+      <description>Preface I share my blogposts on Twitter and LinkedIn. I also let a few friends know via email. The suggestions that I received were welcome. Some were things I had already planned to do and others I had not thought of. Now, allow me to continue…
+ Exploring Burlington County, NJ Employment, continued… In my first post, I mentioned the autocorrlation of the data. I will post the autocorrelation graph here again, using the acf function in R:</description>
+    </item>
     
     <item>
       <title>Exploring Burlington County, NJ</title>

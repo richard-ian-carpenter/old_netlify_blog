@@ -1,0 +1,225 @@
+---
+title: Exploring Burlington County, NJ, Part Two
+author: Richard Ian Carpenter
+date: '2018-08-01'
+slug: exploring-burlington-county-nj-part-two
+categories:
+  - employment
+  - economy
+tags:
+  - employment
+  - economy
+description: ''
+topics: []
+---
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<div id="preface" class="section level3">
+<h3>Preface</h3>
+<p>I share my blogposts on Twitter and LinkedIn. I also let a few friends know via email. The suggestions that I received were welcome. Some were things I had already planned to do and others I had not thought of. Now, allow me to continue…</p>
+</div>
+<div id="exploring-burlington-county-nj-employment-continued" class="section level3">
+<h3>Exploring Burlington County, NJ Employment, continued…</h3>
+<p>In my <a href="https://www.justadatageek.com/2018/07/21/exploring-burlington-county-nj/">first post</a>, I mentioned the autocorrlation of the data. I will post the autocorrelation graph here again, using the <code>acf</code> function in <code>R</code>:</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>One of my friends and former BLS coworkers, Tom, suggested checking the partial autocorrelation of the data for an additional check on the lag structure. Below is a plot of the <code>pacf</code> results:</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>NOTE: the <code>acf</code> function begins with the zero-order lag of the variable in question, while the <code>pacf</code> function begins with the first-order lag.</p>
+<p>In both graphs, the vertical lines that go above (or below) the horizontal, blue dashed line are deemed to be statistically significant lags of the variable in question. It appears that the first lag is the most significant in both cases.</p>
+<p>In the plot of the data in my first post, the trend in the data was clear: downward from 2007 through early 2011, then upward through the end of the 2017. There is also a marked seasonality to the data each year.</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>With the trend removed, let’s take a quick look at what one year of data looks like in a table. In this case, I created a subset of the data to show monthly data from 2017:</p>
+<table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Value
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+detrend
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+131
+</td>
+<td style="text-align:right;">
+200517
+</td>
+<td style="text-align:left;">
+2017-01-01
+</td>
+<td style="text-align:right;">
+-7134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+132
+</td>
+<td style="text-align:right;">
+200128
+</td>
+<td style="text-align:left;">
+2017-02-01
+</td>
+<td style="text-align:right;">
+-389
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+133
+</td>
+<td style="text-align:right;">
+201343
+</td>
+<td style="text-align:left;">
+2017-03-01
+</td>
+<td style="text-align:right;">
+1215
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+134
+</td>
+<td style="text-align:right;">
+203657
+</td>
+<td style="text-align:left;">
+2017-04-01
+</td>
+<td style="text-align:right;">
+2314
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+135
+</td>
+<td style="text-align:right;">
+206001
+</td>
+<td style="text-align:left;">
+2017-05-01
+</td>
+<td style="text-align:right;">
+2344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+136
+</td>
+<td style="text-align:right;">
+209953
+</td>
+<td style="text-align:left;">
+2017-06-01
+</td>
+<td style="text-align:right;">
+3952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+137
+</td>
+<td style="text-align:right;">
+201068
+</td>
+<td style="text-align:left;">
+2017-07-01
+</td>
+<td style="text-align:right;">
+-8885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+138
+</td>
+<td style="text-align:right;">
+199868
+</td>
+<td style="text-align:left;">
+2017-08-01
+</td>
+<td style="text-align:right;">
+-1200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+139
+</td>
+<td style="text-align:right;">
+206498
+</td>
+<td style="text-align:left;">
+2017-09-01
+</td>
+<td style="text-align:right;">
+6630
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+140
+</td>
+<td style="text-align:right;">
+207511
+</td>
+<td style="text-align:left;">
+2017-10-01
+</td>
+<td style="text-align:right;">
+1013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+141
+</td>
+<td style="text-align:right;">
+208587
+</td>
+<td style="text-align:left;">
+2017-11-01
+</td>
+<td style="text-align:right;">
+1076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+142
+</td>
+<td style="text-align:right;">
+209368
+</td>
+<td style="text-align:left;">
+2017-12-01
+</td>
+<td style="text-align:right;">
+781
+</td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: Another one of my friends, Larry, whom I also worked with at BLS, made fun of the table in my last post. I am working on a way to make my graphs look nicer using the <code>kable</code> package. From this point forward, I will refer to Larry as “Larry the Table Guy”. (You brought this upon yourself, Larry. :P )</p>
+<p>The “Value” variable is the QCEW employment figure and the “detrend” variable is the first difference of the monthly data.</p>
+<p>I am going to leave off here. I plan on decomposing the data further, to see separate out the seasonal component. There are a few other ways I can explore the data, such as comparing my Burlington County to the surrounding counties, the State of New Jersey, and the national employment figures. I can also breakdown private employment into major NAICS codes to see which industries drive employment in the county. (Hat tip again to Tom, who I brainstormed ideas with via email.)</p>
+<p>Stay tuned!</p>
+</div>

@@ -22,7 +22,7 @@ I wanted to start this exploration with looking at county employment.  I downloa
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 # Loading packages:
 library(lubridate); library(blogdown); library(knitr); library(openxlsx)
-library(forecast); library(tseries); library(tidyverse)
+library(forecast); library(tseries); library(tidyverse); library(kableExtra)
 
 # Reading in data:
 burlco_total_empl <- read.xlsx("~/R/burlco_nj_total_employment.xlsx", startRow = 14)
@@ -55,7 +55,8 @@ table1 <- burlco_private_empl %>%
               "min. empl." = min(Value),
               "max. empl." = max(Value))
 
-as.data.frame(table1)
+kable(table1) %>%
+    kable_styling(table1, bootstrap_options = "responsive")
 ```
 
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}

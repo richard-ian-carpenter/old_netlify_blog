@@ -1,0 +1,87 @@
+---
+title: Exploring Burlington County, NJ, Part Two
+author: Richard Ian Carpenter
+date: '2018-08-01'
+slug: exploring-burlington-county-nj-part-two
+categories:
+  - employment
+  - economy
+tags:
+  - employment
+  - economy
+description: ''
+topics: []
+---
+
+### Preface
+
+I share my blogposts on Twitter and LinkedIn.  I also let a few friends know via email.  The suggestions that I received were welcome.  Some were things I had already planned to do and others I had not thought of.  Now, allow me to continue...
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+# Loading packages:
+library(lubridate); library(blogdown); library(knitr); library(openxlsx)
+library(forecast); library(tseries); library(tidyverse); library(kableExtra)
+library(urca)
+
+# Reading in data:
+burlco_total_empl <- read.xlsx("~/R/burlco_nj_total_employment.xlsx", startRow = 14)
+burlco_private_empl <-read.xlsx("~/R/burlco_nj_private_employment.xlsx", startRow = 14)
+
+# Cleaning out the rows with the annual average, Period = "M13":
+burlco_private_empl <- burlco_private_empl[burlco_private_empl$Period != "M13", ]
+burlco_total_empl <- burlco_total_empl[burlco_total_empl$Period != "M13", ]
+
+# Creating a date variables:
+burlco_private_empl$month <- substr(burlco_private_empl$Period,2,3)
+burlco_total_empl$month <- substr(burlco_total_empl$Period,2,3)
+burlco_private_empl$date <- paste0(burlco_private_empl$Year,"-",
+burlco_private_empl$month,"-01")
+burlco_total_empl$date <- paste0(burlco_total_empl$Year,"-",
+burlco_total_empl$month,"-01")
+burlco_private_empl$date <- ymd(burlco_private_empl$date)
+burlco_total_empl$date <- ymd(burlco_total_empl$date)
+```
+
+### Exploring Burlington County, NJ Employment, continued...
+
+In my [first post](https://www.justadatageek.com/2018/07/21/exploring-burlington-county-nj/), I mentioned the autocorrlation of the data.  I will post the autocorrelation graph here again, using the `acf` function in `R`:
+
+```{r, echo = FALSE}
+acf(burlco_private_empl$Value)
+```
+
+One of my friends and former BLS coworkers, Tom, suggested checking the partial autocorrelation of the data for an additional check on the lag structure.  Below is a plot of the `pacf` results:
+
+```{r, echo = FALSE}
+pacf(burlco_private_empl$Value)
+```
+
+NOTE: the `acf` function begins with the zero-order lag of the variable in question, while the `pacf` function begins with the first-order lag. 
+
+In both graphs, the vertical lines that go above (or below) the horizontal, blue dashed line are deemed to be statistically significant lags of the variable in question.  It appears that the first lag is the most significant in both cases.
+
+In the plot of the data in my first post, the trend in the data was clear: downward from 2007 through early 2011, then upward through the end of the 2017.  There is also a marked seasonality to the data each year.
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+burlco_private_empl$detrend <- diff(c(NA, burlco_private_empl$Value))
+p2 <- ggplot(data = burlco_private_empl, aes(x = date, y = detrend))
+p2 + geom_line() + geom_smooth()
+```
+
+With the trend removed, let's take a quick look at what one year of data looks like in a table.  In this case, I created a subset of the data to show monthly data from 2017:
+
+```{r, echo = FALSE}
+subset_burlco <- burlco_private_empl[burlco_private_empl$date > "2016-12-01", ]
+subset_burlco <- subset_burlco[c(4,6,7)]
+kable(subset_burlco) %>%
+    kable_styling(burlco_private_empl, bootstrap_options = "responsive")
+```
+
+NOTE: Another one of my friends, Larry, whom I also worked with at BLS, made fun of the table in my last post.  I am working on a way to make my graphs look nicer using the `kable` package.  From this point forward, I will refer to Larry as "Larry the Table Guy".  (You brought this upon yourself, Larry.  :P ) 
+
+The "Value" variable is the QCEW employment figure and the "detrend" variable is the first difference of the monthly data.
+
+I am going to leave off here.  I plan on decomposing the data further, to see separate out the seasonal component.  There are a few other ways I can explore the data, such as comparing my Burlington County to the surrounding counties, the State of New Jersey, and the national employment figures.  I can also breakdown private employment into major NAICS codes to see which industries drive employment in the county.  (Hat tip again to Tom, who I brainstormed ideas with via email.)
+
+Stay tuned!
+

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.45.1" />
 
-  <title>Exploring Burlington County, NJ &middot; Just A Data Geek</title>
+  <title>Exploring Burlington County, NJ, Part Two &middot; Just A Data Geek</title>
 
   
   
@@ -207,7 +207,7 @@
 
 
 <div class="header">
-  <h1>Exploring Burlington County, NJ</h1>
+  <h1>Exploring Burlington County, NJ, Part Two</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -216,7 +216,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Jul 2018, 00:00</time>
+    <time>01 Aug 2018, 00:00</time>
   </div>
 
   
@@ -245,231 +245,212 @@
   <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
 
 
-<div id="beginning-an-exploration-of-burlington-county-nj" class="section level3">
-<h3>Beginning An Exploration of Burlington County, NJ</h3>
-<p>Early last year, my family and I moved back to the Philadelphia area. We settled in Burlington County, New Jersey. Details on the county and a bit about its history can be found on <a href="https://en.wikipedia.org/wiki/Burlington_County,_New_Jersey">via Wikipedia</a>.</p>
-<p>I wanted to start this exploration with looking at county employment. I downloaded these data from the <a href="https://www.bls.gov/cew/">BLS QCEW</a> website, which covers 2007 through 2017. Employment figures for the county for 2018 are not yet available.</p>
+<div id="preface" class="section level3">
+<h3>Preface</h3>
+<p>I share my blogposts on Twitter and LinkedIn. I also let a few friends know via email. The suggestions that I received were welcome. Some were things I had already planned to do and others I had not thought of. Now, allow me to continue…</p>
 </div>
-<div id="looking-at-summary-statistics" class="section level3">
-<h3>Looking at Summary Statistics</h3>
-<p>The first thing I’d like to look at is the annual employment numbers, with a focus on private, non-farm employment – which removes Federal, state, and local government employees, as well as non-covered employees such as railroad employees and those employed by religious organizations:</p>
+<div id="exploring-burlington-county-nj-employment-continued" class="section level3">
+<h3>Exploring Burlington County, NJ Employment, continued…</h3>
+<p>In my <a href="https://www.justadatageek.com/2018/07/21/exploring-burlington-county-nj/">first post</a>, I mentioned the autocorrlation of the data. I will post the autocorrelation graph here again, using the <code>acf</code> function in <code>R</code>:</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>One of my friends and former BLS coworkers, Tom, suggested checking the partial autocorrelation of the data for an additional check on the lag structure. Below is a plot of the <code>pacf</code> results:</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>NOTE: the <code>acf</code> function begins with the zero-order lag of the variable in question, while the <code>pacf</code> function begins with the first-order lag.</p>
+<p>In both graphs, the vertical lines that go above (or below) the horizontal, blue dashed line are deemed to be statistically significant lags of the variable in question. It appears that the first lag is the most significant in both cases.</p>
+<p>In the plot of the data in my first post, the trend in the data was clear: downward from 2007 through early 2011, then upward through the end of the 2017. There is also a marked seasonality to the data each year.</p>
+<p><img src="/post/2018-07-29-exploring-burlington-county-nj-part-two_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>With the trend removed, let’s take a quick look at what one year of data looks like in a table. In this case, I created a subset of the data to show monthly data from 2017:</p>
 <table class="table table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:right;">
-Year
+<th style="text-align:left;">
 </th>
 <th style="text-align:right;">
-avg. empl.
+Value
+</th>
+<th style="text-align:left;">
+date
 </th>
 <th style="text-align:right;">
-st. dev. empl.
-</th>
-<th style="text-align:right;">
-min. empl.
-</th>
-<th style="text-align:right;">
-max. empl.
+detrend
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right;">
-2007
+<td style="text-align:left;">
+131
 </td>
 <td style="text-align:right;">
-202597.2
+200517
+</td>
+<td style="text-align:left;">
+2017-01-01
 </td>
 <td style="text-align:right;">
-3407.727
-</td>
-<td style="text-align:right;">
-195803
-</td>
-<td style="text-align:right;">
-207705
+-7134
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2008
+<td style="text-align:left;">
+132
 </td>
 <td style="text-align:right;">
-199752.2
+200128
+</td>
+<td style="text-align:left;">
+2017-02-01
 </td>
 <td style="text-align:right;">
-3871.757
-</td>
-<td style="text-align:right;">
-192305
-</td>
-<td style="text-align:right;">
-205042
+-389
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2009
+<td style="text-align:left;">
+133
 </td>
 <td style="text-align:right;">
-194917.4
+201343
+</td>
+<td style="text-align:left;">
+2017-03-01
 </td>
 <td style="text-align:right;">
-3651.954
-</td>
-<td style="text-align:right;">
-187003
-</td>
-<td style="text-align:right;">
-200154
+1215
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2010
+<td style="text-align:left;">
+134
 </td>
 <td style="text-align:right;">
-191135.5
+203657
+</td>
+<td style="text-align:left;">
+2017-04-01
 </td>
 <td style="text-align:right;">
-3937.543
-</td>
-<td style="text-align:right;">
-183370
-</td>
-<td style="text-align:right;">
-197031
+2314
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2011
+<td style="text-align:left;">
+135
 </td>
 <td style="text-align:right;">
-190234.0
+206001
+</td>
+<td style="text-align:left;">
+2017-05-01
 </td>
 <td style="text-align:right;">
-3373.338
-</td>
-<td style="text-align:right;">
-184049
-</td>
-<td style="text-align:right;">
-194933
+2344
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
-2012
-</td>
-<td style="text-align:right;">
-192778.8
-</td>
-<td style="text-align:right;">
-3837.607
-</td>
-<td style="text-align:right;">
-187563
-</td>
-<td style="text-align:right;">
-197950
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2013
-</td>
-<td style="text-align:right;">
-195632.8
-</td>
-<td style="text-align:right;">
-3280.522
-</td>
-<td style="text-align:right;">
-189874
-</td>
-<td style="text-align:right;">
-201257
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2014
-</td>
-<td style="text-align:right;">
-196572.8
-</td>
-<td style="text-align:right;">
-3747.050
-</td>
-<td style="text-align:right;">
-190440
-</td>
-<td style="text-align:right;">
-201458
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2015
-</td>
-<td style="text-align:right;">
-196621.7
-</td>
-<td style="text-align:right;">
-4160.501
-</td>
-<td style="text-align:right;">
-191159
-</td>
-<td style="text-align:right;">
-201704
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2016
-</td>
-<td style="text-align:right;">
-200808.8
-</td>
-<td style="text-align:right;">
-4398.542
-</td>
-<td style="text-align:right;">
-195187
-</td>
-<td style="text-align:right;">
-207651
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2017
-</td>
-<td style="text-align:right;">
-204541.6
-</td>
-<td style="text-align:right;">
-3864.954
-</td>
-<td style="text-align:right;">
-199868
+<td style="text-align:left;">
+136
 </td>
 <td style="text-align:right;">
 209953
 </td>
+<td style="text-align:left;">
+2017-06-01
+</td>
+<td style="text-align:right;">
+3952
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+137
+</td>
+<td style="text-align:right;">
+201068
+</td>
+<td style="text-align:left;">
+2017-07-01
+</td>
+<td style="text-align:right;">
+-8885
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+138
+</td>
+<td style="text-align:right;">
+199868
+</td>
+<td style="text-align:left;">
+2017-08-01
+</td>
+<td style="text-align:right;">
+-1200
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+139
+</td>
+<td style="text-align:right;">
+206498
+</td>
+<td style="text-align:left;">
+2017-09-01
+</td>
+<td style="text-align:right;">
+6630
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+140
+</td>
+<td style="text-align:right;">
+207511
+</td>
+<td style="text-align:left;">
+2017-10-01
+</td>
+<td style="text-align:right;">
+1013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+141
+</td>
+<td style="text-align:right;">
+208587
+</td>
+<td style="text-align:left;">
+2017-11-01
+</td>
+<td style="text-align:right;">
+1076
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+142
+</td>
+<td style="text-align:right;">
+209368
+</td>
+<td style="text-align:left;">
+2017-12-01
+</td>
+<td style="text-align:right;">
+781
+</td>
 </tr>
 </tbody>
 </table>
-<p><img src="/post/2018-07-21-exploring-burlington-county-nj_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Note: More information on who is included in those statistics can be found <a href="https://www.bls.gov/cew/cewbultncur.htm#Employment">here</a>.</p>
-<p>From the data, it would appear that Burlington County has rebounded from the lows of the 2008-09 Financial Crisis. The blue dots are monthly employment, and show some (expected) variation, the black line shows the seasonality that occurs each year, and the solid blue line shows the trend in the data.</p>
-<p>This plot of autocorrelation more clearly shows the trend (demonstrated by the “decaying wave” pattern) and the seasonality, which occurs on a 6-month basis, in the data:</p>
-<p><img src="/post/2018-07-21-exploring-burlington-county-nj_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>I’m going to leave off here for the moment while I collect and sort through additional data. I plan to look at the major sectors in private employment (by NAICS) and see how they affect private employment. I also plan on looking at wages in a similar fashion.</p>
-<p>Until next post…</p>
+<p>NOTE: Another one of my friends, Larry, whom I also worked with at BLS, made fun of the table in my last post. I am working on a way to make my graphs look nicer using the <code>kable</code> package. From this point forward, I will refer to Larry as “Larry the Table Guy”. (You brought this upon yourself, Larry. :P )</p>
+<p>The “Value” variable is the QCEW employment figure and the “detrend” variable is the first difference of the monthly data.</p>
+<p>I am going to leave off here. I plan on decomposing the data further, to see separate out the seasonal component. There are a few other ways I can explore the data, such as comparing my Burlington County to the surrounding counties, the State of New Jersey, and the national employment figures. I can also breakdown private employment into major NAICS codes to see which industries drive employment in the county. (Hat tip again to Tom, who I brainstormed ideas with via email.)</p>
+<p>Stay tuned!</p>
 </div>
 
 
@@ -477,13 +458,13 @@ max. empl.
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2018/07/08/my-thoughts-on-bitcoin/"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2018/07/21/exploring-burlington-county-nj/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2018/07/08/my-thoughts-on-bitcoin/">My Thoughts On Bitcoin</a>
+      <a href="/2018/07/21/exploring-burlington-county-nj/">Exploring Burlington County, NJ</a>
     </nav>
     
   </div>
@@ -492,14 +473,8 @@ max. empl.
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="/2018/08/01/exploring-burlington-county-nj-part-two/">Exploring Burlington County, NJ, Part Two</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2018/08/01/exploring-burlington-county-nj-part-two/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

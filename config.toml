@@ -30,9 +30,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/comment_policy/"
     
 [social]
-	twitter = "https://www.twitter.com/RICarpenter/"
-	github = "https://github.com/richard-ian-carpenter/"
-	linkedin = "www.linkedin.com/in/richard-ian-carpenter-755a1453/"
+	twitter = "RICarpenter/"
+	github = "richard-ian-carpenter/"
+	linkedin = "richard-ian-carpenter-755a1453/"
 
 [params]
     description = "Exploring and analyzing data because... data!"
@@ -45,6 +45,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
     MathJaxCDN = "//cdn.bootcss.com"
     MathJaxVersion = "2.7.1"
+    
+    custom_css = ["css/table.css"]
 
 # [params.logo]
 #    url = "/static/img/jadg.png"
