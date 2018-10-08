@@ -44,7 +44,7 @@ burlco_total_empl$date <- ymd(burlco_total_empl$date)
 
 ### Exploring Burlington County, NJ Employment, continued...
 
-In my [first post](https://www.justadatageek.com/2018/07/21/exploring-burlington-county-nj/), I mentioned the autocorrlation of the data.  I will post the autocorrelation graph here again, using the `acf` function in `R`:
+In my [first post](https://www.justadatageek.com/2018/07/21/exploring-burlington-county-nj/), I mentioned the autocorrelation of the data.  I will post the autocorrelation graph here again, using the `acf` function in `R`:
 
 ```{r, echo = FALSE}
 acf(burlco_private_empl$Value)
