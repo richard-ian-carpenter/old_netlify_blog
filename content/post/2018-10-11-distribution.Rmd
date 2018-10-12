@@ -78,7 +78,9 @@ stat_table1
 
 Note: The NA was created when I ran the diff() function on the closing prices.  It is not an actual missing observation.
 
-If you look at the graph, pretty much everything falls with three standard deviations of the mean with the exception of the five largest declines, which all occured in 2018.  So, what do they look like and when did they happen?
+If you look at the graph, pretty much everything falls with three standard deviations of the mean with the exception of the five largest declines.  This is to be expected since three standard deviations covers just slightly less than 100% of all values around the mean in a normally distributed dataset.  But all of these "extreme" movements are negative.
+
+So, what do they look like and when did they happen?
 
 ```{r, echo = FALSE}
 sub_dji_data <- dji_data[dji_data$close_diff < three_lower_sd_close_diff, ]
