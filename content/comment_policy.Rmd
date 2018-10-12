@@ -57,3 +57,5 @@ If you didn’t write it, or haven’t properly cited the article you’re quoti
 ### English Only
 
 We currently only support English-only discussions on Disqus channels. Non-English comments and discussions will be removed.  If you don't speak English, please try [Google Translate](https://translate.google.com/).
+
+[Home](https://www.justadatageek.com)

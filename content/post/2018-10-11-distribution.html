@@ -1,0 +1,106 @@
+---
+title: Distribution
+author: Richard Ian Carpenter
+date: '2018-10-11'
+slug: distribution
+categories:
+  - market
+  - dow jones
+tags:
+  - market
+  - dow jones
+description: ''
+topics: []
+---
+
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<div id="introductory-note" class="section level2">
+<h2>Introductory Note</h2>
+<p>There has been a lot going on at work and home, and my blogging has suffered from it. I am trying to get back into a regular blogging schedule. I will continue the Burlington County, NJ series later.</p>
+</div>
+<div id="the-dow-jones-has-had-a-couple-of-bad-days" class="section level2">
+<h2>The Dow Jones Has Had A Couple Of Bad Days…</h2>
+<p>… but these are extreme events. Below is a graph of the distribution of the differences in market closes for the past year:</p>
+<p><img src="/post/2018-10-11-distribution_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The vertical lines represent zero (the black line), the median (red line) of 28.090, and the first, second, and third standard deviations from the mean. What do the basic statistics look like:</p>
+<pre><code>##      Min.   1st Qu.    Median      Mean   3rd Qu.      Max.      NA&#39;s 
+## -1175.211   -80.350    28.090     8.812   118.981   669.400         1</code></pre>
+<p>Note: The NA was created when I ran the diff() function on the closing prices. It is not an actual missing observation.</p>
+<p>If you look at the graph, pretty much everything falls with three standard deviations of the mean with the exception of the five largest declines, which all occured in 2018. So, what do they look like and when did they happen?</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:right;">
+close_diff
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+78
+</td>
+<td style="text-align:left;">
+2018-02-02
+</td>
+<td style="text-align:right;">
+-665.7500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+79
+</td>
+<td style="text-align:left;">
+2018-02-05
+</td>
+<td style="text-align:right;">
+-1175.2109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+82
+</td>
+<td style="text-align:left;">
+2018-02-08
+</td>
+<td style="text-align:right;">
+-1032.8887
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+111
+</td>
+<td style="text-align:left;">
+2018-03-22
+</td>
+<td style="text-align:right;">
+-724.4199
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+251
+</td>
+<td style="text-align:left;">
+2018-10-10
+</td>
+<td style="text-align:right;">
+-831.8301
+</td>
+</tr>
+</tbody>
+</table>
+<p>Today’s drop of 545.91 points is inside the third standard deviation (-663.4169).</p>
+<p>I think an interesting research project for a later date is to answer the question: Are five “extreme” events like this normal for the time period covered in the data?</p>
+<p>I am going to leave this here, bid everyone a good night.</p>
+</div>

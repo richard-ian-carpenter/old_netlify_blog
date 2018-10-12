@@ -1,0 +1,94 @@
+---
+title: Distribution
+author: Richard Ian Carpenter
+date: '2018-10-11'
+slug: distribution
+categories:
+  - market
+  - dow jones
+tags:
+  - market
+  - dow jones
+description: ''
+topics: []
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# Setting up:
+setwd("~/R/blog_new")
+library(blogdown)
+library(ggplot2)
+library(lubridate)
+library(tidyverse)
+library(kableExtra)
+
+# Reading and cleaning up the data:
+dji_data <- read.csv("~/R/dji_data.csv")
+date <- ymd(dji_data$Date)
+dji_data$Date <- date
+rm("date")
+colnames(dji_data) <- c("date", "open", "high", "low", "close", "adj_close", "volume")
+dji_data$close_diff <- c(NA, diff(dji_data$close))
+```
+## Introductory Note
+
+There has been a lot going on at work and home, and my blogging has suffered from it.  I am trying to get back into a regular blogging schedule.  I will continue the Burlington County, NJ series later.  
+
+## The Dow Jones Has Had A Couple Of Bad Days...
+
+... but these are extreme events.  Below is a graph of the distribution of the differences in market closes for the past year:
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+# Basic stats:
+mean_close_diff = mean(dji_data$close_diff, na.rm = TRUE)
+median_close_diff = median(dji_data$close_diff, na.rm = TRUE)
+sd_close_diff = sd(dji_data$close_diff, na.rm = TRUE)
+upper_sd_close_diff = mean_close_diff + sd_close_diff
+lower_sd_close_diff = mean_close_diff - sd_close_diff
+two_upper_sd_close_diff = mean_close_diff + 2*sd_close_diff
+two_lower_sd_close_diff = mean_close_diff - 2*sd_close_diff
+three_upper_sd_close_diff = mean_close_diff + 3*sd_close_diff
+three_lower_sd_close_diff = mean_close_diff - 3*sd_close_diff
+
+# Plotting:
+ggplot(data = dji_data, aes(x = close_diff)) + 
+    geom_histogram(binwidth = 10) + 
+    geom_vline(xintercept = 0, color = "black") + 
+    geom_vline(xintercept = median_close_diff, color = "red") + 
+    geom_vline(xintercept = lower_sd_close_diff, color = "blue") +
+    geom_vline(xintercept = upper_sd_close_diff, color = "blue") + 
+    geom_vline(xintercept = two_lower_sd_close_diff, color = "dodgerblue") +
+    geom_vline(xintercept = two_upper_sd_close_diff, color = "dodgerblue") + 
+    geom_vline(xintercept = three_lower_sd_close_diff, color = "darkturquoise") +
+    geom_vline(xintercept = three_upper_sd_close_diff, color = "darkturquoise") + 
+    labs(x = "Difference of Closing Price",
+    y = "Count/Frequency", 
+    title = "Histogram of DJI Closing Prices, 12 Oct 2017 to 11 Oct 2018",
+    caption = "Source: Yahoo! Finance") +
+    theme_bw()
+```
+
+The vertical lines represent zero (the black line), the median (red line) of 28.090, and the first, second, and third standard deviations from the mean.  What do the basic statistics look like:
+
+```{r, echo = FALSE}
+stat_table1 <- summary(dji_data$close_diff)
+
+stat_table1 
+```
+
+Note: The NA was created when I ran the diff() function on the closing prices.  It is not an actual missing observation.
+
+If you look at the graph, pretty much everything falls with three standard deviations of the mean with the exception of the five largest declines, which all occured in 2018.  So, what do they look like and when did they happen?
+
+```{r, echo = FALSE}
+sub_dji_data <- dji_data[dji_data$close_diff < three_lower_sd_close_diff, ]
+sub_dji_data <- sub_dji_data[-1,-c(2:7)]
+kable(sub_dji_data) %>%
+    kable_styling(full_width = FALSE)
+```
+
+Today's drop of 545.91 points is inside the third standard deviation (-663.4169).
+
+I think an interesting research project for a later date is to answer the question: Are five "extreme" events like this normal for the time period covered in the data?
+
+I am going to leave this here, bid everyone a good night.
