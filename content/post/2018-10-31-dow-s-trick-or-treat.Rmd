@@ -74,7 +74,7 @@ p4 <- ggplot(data = df, aes(x = date, y = level_change)) + geom_line() +
 p5 <- ggplot(data = df, aes(x = daily_diff)) + geom_histogram(bins = 50)
 ```
 
-The Dow Jones Industrial Average (DJIA) showed gave us an interesting, if not a little scary, performance this month.  When we look at the difference in closing prices, we can see that it was mostly within a range of +/-500 points:
+The Dow Jones Industrial Average (DJIA) gave us an interesting, if not a little scary, performance this month.  When we look at the difference in closing prices, we can see that it was mostly within a range of +/-500 points:
 
 ```{r, echo = FALSE}
 grid.arrange(p1, p2, nrow = 2)
