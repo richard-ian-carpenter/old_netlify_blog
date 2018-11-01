@@ -137,7 +137,7 @@ p9 <- ggplot(data = df2, aes(x = date, y = level_change)) + geom_line() +
 p10 <- ggplot(data = df2, aes(x = daily_diff)) + geom_histogram(bins = 50)
 ```
 
-On a similar note, I also looked at the year-to-date performance of the DJIA and noticed that volatility in the closing price occured in two periods: the one we are experiencing now in October and the other that occured in the February to April time period.  The May - September time period were relatively quiet in terms of the DJIA closing price:
+On a similar note, I also looked at the year-to-date performance of the DJIA and noticed that volatility in the closing price occurred in two periods: the one we are experiencing now in October and the other that occurred in the February to April time period.  The May - September time period were relatively quiet in terms of the DJIA closing price:
 
 ```{r, echo = FALSE}
 grid.arrange(p6, p7, nrow = 2)
