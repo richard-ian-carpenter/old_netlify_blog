@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/dow-jones/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dow&#39;s Trick Or Treat</title>
+      <link>/2018/10/31/dow-s-trick-or-treat/</link>
+      <pubDate>Wed, 31 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/31/dow-s-trick-or-treat/</guid>
+      <description>The Dow Jones Industrial Average (DJIA) showed gave us an interesting, if not a little scary, performance this month. When we look at the difference in closing prices, we can see that it was mostly within a range of +/-500 points:
+Another view is the percent change in the DJIA, indexing on 1 October 2018 and seeing how it performed:
+On a similar note, I also looked at the year-to-date performance of the DJIA and noticed that volatility in the closing price occured in two periods: the one we are experiencing now in October and the other that occured in the February to April time period.</description>
+    </item>
     
     <item>
       <title>Distribution</title>
