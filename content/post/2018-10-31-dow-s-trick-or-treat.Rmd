@@ -149,6 +149,6 @@ Likewise, the performance appeared to be range bound of +/-5% when indexed to th
 p8
 ```
 
-Something to build on from here would be looking at the components of the DJIA and compare their individual performances over the same time period.  I am working on creating a Shiny app since it is more dynamic than this blog.  Once that is complete, I will include a link to it.
+Something to build on from here would be looking at the components of the DJIA and compare their individual performances over the same time period.  I am working on a Shiny app since it is more dynamic than this blog.  Once it is complete, I will include a link to it.
 
 This is all I have for the moment.  I hope you enjoyed the (brief) post. 
