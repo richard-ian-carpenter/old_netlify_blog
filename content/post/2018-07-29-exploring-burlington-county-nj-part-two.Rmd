@@ -84,4 +84,3 @@ The "Value" variable is the QCEW employment figure and the "detrend" variable is
 I am going to leave off here.  There are a few other ways I would like to explore this data, such as comparing Burlington County to its neighboring counties, the State of New Jersey, and the national employment figures.  I could also breakdown private employment into major NAICS codes to see which industries drive employment in the county.  (Hat tip again to Tom, who I brainstormed ideas with via email.)
 
 Stay tuned!
-
