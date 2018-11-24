@@ -42,14 +42,14 @@ df$level_change <- df$close - df$first_close
 df$pct_change <- round((df$close/df$first_close),2)
 
 # Simple plots and another summary statistic:
-p1 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = close, group = 1)) +
+p1 <- ggplot(data = df, aes(x = date, y = close)) +
     geom_line() +
     theme_bw() + 
     labs(title = "Dow Jones Index, October 2018",
          subtitle = "Market closing price",
          x = "Date", y = "Closing Price", 
          caption = "Source: Yahoo! Finance")
-p2 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = daily_diff, group = 1)) + 
+p2 <- ggplot(data = df, aes(x = date, y = daily_diff)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 0), color = "blue") +
@@ -57,7 +57,7 @@ p2 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = daily_diff, group 
          subtitle = "Daily change in market closing price",
          x = "Date", y = "Difference in Closing Price", 
          caption = "Source: Yahoo! Finance")
-p3 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = pct_change, group = 1)) + 
+p3 <- ggplot(data = df, aes(x = date, y = pct_change)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 1.0), color = "blue") +
@@ -65,7 +65,7 @@ p3 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = pct_change, group 
          subtitle = "Percent price change; Indexed, 1 Oct 2018 = 1.00",
          x = "Date", y = "Percent", 
          caption = "Source: Yahoo! Finance")
-p4 <- ggplot(data = df, aes(x = ordered(as.factor(date)), y = level_change, group = 1)) + 
+p4 <- ggplot(data = df, aes(x = date, y = level_change)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 0), color = "blue") +
@@ -108,7 +108,7 @@ df2$level_change <- df2$close - df2$first_close
 df2$pct_change <- round((df2$close/df2$first_close),2)
 
 # Simple plots and another summary statistic:
-p6 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = close, group = 1)) + 
+p6 <- ggplot(data = df2, aes(x = date, y = close)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 25000), color = "blue") +
@@ -116,7 +116,7 @@ p6 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = close, group = 1)
          subtitle = "Market closing price",
          x = "Date", y = "Closing Price", 
          caption = "Source: Yahoo! Finance")
-p7 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = daily_diff, group = 1)) + 
+p7 <- ggplot(data = df2, aes(x = date, y = daily_diff)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 0), color = "blue") +
@@ -124,7 +124,7 @@ p7 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = daily_diff, group
          subtitle = "Daily change in market closing price",
          x = "Date", y = "Difference in Closing Price", 
          caption = "Source: Yahoo! Finance")
-p8 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = pct_change, group = 1)) + 
+p8 <- ggplot(data = df2, aes(x = date, y = pct_change)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 1.0), color = "blue") +
@@ -132,7 +132,7 @@ p8 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = pct_change, group
          subtitle = "Percent price change; Indexed, 2 Jan 2018 = 1.00",
          x = "Date", y = "Percent", 
          caption = "Source: Yahoo! Finance")
-p9 <- ggplot(data = df2, aes(x = ordered(as.factor(date)), y = level_change, group = 1)) + 
+p9 <- ggplot(data = df2, aes(x = date, y = level_change)) + 
 	geom_line() +
     theme_bw() +
     geom_hline(aes(yintercept = 0), color = "blue") +
