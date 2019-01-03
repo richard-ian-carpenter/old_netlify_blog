@@ -1,0 +1,114 @@
+---
+title: DJIA High-Low Spread
+author: Richard I. Carpenter
+date: '2019-01-02'
+slug: djia-high-low-spread
+categories:
+  - dow jones
+  - market
+tags:
+  - dow jones
+  - market
+description: ''
+topics: []
+---
+
+```{r, echo = FALSE, warning  = FALSE, message = FALSE}
+# Loading packages:
+library(lubridate)
+library(blogdown)
+library(kableExtra)
+library(tidyverse)
+library(gridExtra)
+library(knitr)
+library(moments)
+
+# Setting working directory and reading in the data:
+setwd("~/R/blog_new")
+df <- read.csv("~/R/dji_data_2018.csv")
+
+# Lubridate and summary stats:
+df$date <- ymd(df$date)
+
+# Creating some fields...
+# ... first is the daily difference:
+df$daily_diff <- c(0, diff(df$close))
+# ... a column of the first day's closing amount:
+df$first_close <- df$close[1]
+# ... this is the level change, with the first day set at zero:
+df$level_change <- df$close - df$first_close
+# ... this is the percent change, with the first day set at zero:
+df$pct_change <- round((df$close/df$first_close),2)
+# ... this is to make the volume amounts more manageable with ggplot2, 
+# and avoid scientific notation:
+df$volume_mils <- df$volume/1000000
+
+# Plotting daily volumes:
+p1 <- ggplot(data = df, aes(x = date, y = volume_mils)) +
+                 geom_col(color = "black") +
+    labs(title = "Dow Jones Index, 2018",
+         subtitle = "Daily Volumes for 2018; horizontal line is annual average volume",
+         x = "Date", y = "Trading Volume, in millions", 
+         caption = "Source: Yahoo! Finance") +
+    geom_hline(yintercept = mean(df$volume_mils), color = "blue") +
+    scale_x_date(date_labels = "%b")
+
+# Plotting high-low spread for correlation with volume:
+df$high_low_spread <- df$high - df$low
+
+p2 <- ggplot(data = df, aes(x = date, y = high_low_spread)) +
+    geom_line() + theme_bw() +
+    labs(title = "Dow Jones Index, 2018",
+         subtitle = "Daily High-Low Spread for 2018",
+         x = "Date", y = "High-Low Spread", 
+         caption = "Source: Yahoo! Finance") +
+    scale_x_date(date_labels = "%b")
+```
+
+It is fun when insomnia, curiosity, and a good conversation lead to continuing research.  Yesterday, I published a blog about the Dow Jones' performance in 2018 [link](https://www.justadatageek.com/2019/01/01/the-2018-dow-jones-industrial-average-s-performance/).  One of my graduate program professors, David Flynn -- whom I will shamelessly plug the blog of here: [Barter Is Evil](http://barterisevil.com/) -- replied about the relative calm period during the summer in the graph that showed daily volumes.
+
+```{r, echo = FALSE}
+p1
+```
+
+I became curious if the spread between the daily high and low price had any correlation with the daily volume.  So I calculated it quickly:
+
+```{r, echo = FALSE}
+cor(df$volume, df$high_low_spread)
+```
+
+... and then created a graph to plot out the high-low spread to aid in the comparison:
+
+```{r, echo = FALSE}
+grid.arrange(p1, p2, nrow = 2)
+```
+
+David asked if I had looked at the high-low spread as a percentage of the opening price of the DJIA.  So, I am going to do that quickly here.  First, I calculate the percentage and then create a plot:
+
+```{r, echo = FALSE}
+df$ratio_spread_to_open <- (df$high_low_spread/df$open)*100
+
+ggplot(data = df, aes(x = date, y = ratio_spread_to_open)) +
+    geom_line() + theme_bw() +
+    labs(title = "Dow Jones Index, 2018",
+         subtitle = "High-Low Spread to Opening Percentage",
+         x = "Date", y = "Percent", 
+         caption = "Source: Yahoo! Finance") +
+    scale_x_date(date_labels = "%b")
+```
+
+... and then do the same with regard to the closing price:
+
+```{r, echo = FALSE}
+df$ratio_spread_to_close <- (df$high_low_spread/df$close)*100
+
+ggplot(data = df, aes(x = date, y = ratio_spread_to_close)) +
+    geom_line() + theme_bw() +
+    labs(title = "Dow Jones Index, 2018",
+         subtitle = "High-Low Spread to Closing Percentage",
+         x = "Date", y = "Percent", 
+         caption = "Source: Yahoo! Finance") +
+    scale_x_date(date_labels = "%b")
+```
+
+All of this is leading to further research which appears to begin with the work of Richard Roll and his 1984 paper ["A Simple Implicit Measure of the Effective Bid‐Ask Spread in an Efficient Market"](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1540-6261.1984.tb03897.x).  So, on to some reading!

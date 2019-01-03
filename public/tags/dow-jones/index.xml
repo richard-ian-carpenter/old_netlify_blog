@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/dow-jones/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DJIA High-Low Spread</title>
+      <link>/2019/01/02/djia-high-low-spread/</link>
+      <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/01/02/djia-high-low-spread/</guid>
+      <description>It is fun when insomnia, curiosity, and a good conversation lead to continuing research. Yesterday, I published a blog about the Dow Jones’ performance in 2018 link. One of my graduate program professors, David Flynn – whom I will shamelessly plug the blog of here: Barter Is Evil – replied about the relative calm period during the summer in the graph that showed daily volumes.
+I became curious if the spread between the daily high and low price had any correlation with the daily volume.</description>
+    </item>
     
     <item>
       <title>The 2018 Dow Jones Industrial Average&#39;s Performance</title>
