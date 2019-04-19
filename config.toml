@@ -47,6 +47,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     MathJaxVersion = "2.7.1"
     
     custom_css = ["css/table.css"]
+    
+    dateFormat = "01 Jan 2000"
 
 # [params.logo]
 #    url = "/static/img/jadg.png"

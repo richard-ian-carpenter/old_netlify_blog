@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Commodities on Just A Data Geek</title>
-    <link>/categories/commodities/</link>
-    <description>Recent content in Commodities on Just A Data Geek</description>
+    <title>Personal Note on Just A Data Geek</title>
+    <link>/categories/personal-note/</link>
+    <description>Recent content in Personal Note on Just A Data Geek</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018. All rights reserved.</copyright>
     <lastBuildDate>Sat, 02 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/commodities/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/personal-note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       
       <guid>/2019/03/02/natural-gas-and-some-other-stuff/</guid>
       <description>It has been a while since I have posted anything on my blog. Life has been busy since I started a new job in mid-January. I accepted a position as a Risk Analyst with a company in the energy industry. I focus on the financial and economic risk faced by the company, including natural gas and electricity prices. The learning curve is steep, but I am enjoying it: I have reached Nerdvana!</description>
-    </item>
-    
-    <item>
-      <title>My Thoughts On Bitcoin</title>
-      <link>/2018/07/08/my-thoughts-on-bitcoin/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/07/08/my-thoughts-on-bitcoin/</guid>
-      <description>I enjoy listening to/reading the stories on the various business news outlets about cryptocurrencies – I have been casually reading about blockchain technology and its different applications, but that is not the focus of this post.
-While I am not an “expert” on cryptocurrencies, I have come to the opinion that they are not really currencies. I see them as a commodity as opposed to a currency. Why?
-Like some other commodities, it is “mined”.</description>
     </item>
     
   </channel>

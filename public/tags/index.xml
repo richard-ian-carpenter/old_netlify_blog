@@ -24,7 +24,7 @@
     <item>
       <title>Commodities</title>
       <link>/tags/commodities/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/commodities/</guid>
       <description></description>
@@ -81,6 +81,24 @@
       <pubDate>Wed, 02 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/market/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Natgas</title>
+      <link>/tags/natgas/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/natgas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal Note</title>
+      <link>/tags/personal-note/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/personal-note/</guid>
       <description></description>
     </item>
     
