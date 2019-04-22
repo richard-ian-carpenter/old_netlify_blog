@@ -65,7 +65,7 @@ p2 <- ggplot(data = df, aes(x = date, y = high_low_spread)) +
     scale_x_date(date_labels = "%b")
 ```
 
-It is fun when insomnia, curiosity, and a good conversation lead to continuing research.  Yesterday, I published a blog about the Dow Jones' performance in 2018 [link](https://www.justadatageek.com/2019/01/01/the-2018-dow-jones-industrial-average-s-performance/).  One of my graduate program professors, David Flynn -- whom I will shamelessly plug the blog of here: [Barter Is Evil](http://barterisevil.com/) -- replied about the relative calm period during the summer in the graph that showed daily volumes.
+It is fun when insomnia, curiosity, and a good conversation lead to continuing research.  Yesterday, I published a blog about the Dow Jones' performance in 2018 [[link]](https://www.justadatageek.com/2019/01/01/the-2018-dow-jones-industrial-average-s-performance/).  One of my graduate program professors, David Flynn -- whom I will shamelessly plug the blog of here: [Barter Is Evil](http://barterisevil.com/) -- replied about the relative calm period during the summer in the graph that showed daily volumes.
 
 ```{r, echo = FALSE}
 p1
