@@ -48,7 +48,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     
     custom_css = ["css/table.css"]
     
-    dateFormat = "01 Jan 2010"
+    dateFormat = "01 Feb 2006"
 
 
 # [params.logo]
