@@ -48,7 +48,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     
     custom_css = ["css/table.css"]
     
-    dateFormat = "01 Jan 2010"
+    dateFormat = "2010/01/01"
 
 # [params.logo]
 #    url = "/static/img/jadg.png"
