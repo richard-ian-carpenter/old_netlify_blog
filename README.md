@@ -1,4 +1,4 @@
-# blog_new
+# old_netlify_blog
 
 I  have moved to a WordPress site hosted by Bluehost.  That repository is called "WordPress Blog".
 
